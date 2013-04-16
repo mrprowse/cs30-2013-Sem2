@@ -23,7 +23,7 @@ public class Map {
         Pyramid pyramid = new Pyramid();
         int x = 0, y = 0, z = 0;
         //Need to write base case
-        if (x == 0 || x == Bird.getX || y == 0 || z == 0) {
+        if (x == 0 || x <= Bird.getxEnd || x >= Bird.getxStart|| y == 0 || z == 0) {
             x = rand.nextInt(maxX) + 1;
             y = maxY;
             z = rand.nextInt(maxZ) + 1;
@@ -36,7 +36,7 @@ public class Map {
         Powerup powerup = new Powerup();
         int x = 0, y = 0, z = 0;
         //Need to write base case
-        if (x == 0 || x == Bird.getX || y == 0 || z == 0) {
+        if (x == 0 || <= Bird.getxEnd || x >= Bird.getxStart || y == 0 || z == 0) {
             x = rand.nextInt(maxX) + 1;
             y = maxY;
             z = rand.nextInt(maxZ) + 1;
