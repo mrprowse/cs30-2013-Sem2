@@ -1,5 +1,7 @@
 package com.me.mygdxgame;
 
+import java.util.Random;
+
 
 public class Map {
     /*
@@ -10,6 +12,7 @@ public class Map {
     private static int maxX = 5, maxY = 5, maxZ = 5;
 //Temporary numbers, also waiting for
 //position
+    //stub
 
     public static int spawnBird() {
         return maxX / 2;
@@ -17,9 +20,10 @@ public class Map {
 
     public static int spawnPyramids() {
         Random rand = new Random();
+        Pyramid pyramid = new Pyramid();
         int x = 0, y = 0, z = 0;
-        //Need to write basecase
-        if (x == 0 || x == Bird.getX || y == 0 || z == 0) {
+        //Need to write base case
+        if (x == 0 || x <= Bird.getxEnd || x >= Bird.getxStart|| y == 0 || z == 0) {
             x = rand.nextInt(maxX) + 1;
             y = maxY;
             z = rand.nextInt(maxZ) + 1;
@@ -29,9 +33,10 @@ public class Map {
 
     public static int spawnPowerups() {
         Random rand = new Random();
+        Powerup powerup = new Powerup();
         int x = 0, y = 0, z = 0;
-        //Need to write basecase
-        if (x == 0 || x == Bird.getX || y == 0 || z == 0) {
+        //Need to write base case
+        if (x == 0 || <= Bird.getxEnd || x >= Bird.getxStart || y == 0 || z == 0) {
             x = rand.nextInt(maxX) + 1;
             y = maxY;
             z = rand.nextInt(maxZ) + 1;
@@ -51,9 +56,9 @@ public class Map {
 
     public static int refreshPowerups(int y) {
         /*
-         * Need the powerups class
+         * Need the power ups class
          */
-        y--; //Powerups move closer, bird stays the same.
+        y--; //Power ups move closer, bird stays the same.
         return 5; //Temporary, error bugs me
     }
 }
