@@ -12,6 +12,7 @@ public class Map {
     private static int maxX = 5, maxY = 5, maxZ = 5;
 //Temporary numbers, also waiting for
 //position
+    //stub
 
     public static int spawnBird() {
         return maxX / 2;
