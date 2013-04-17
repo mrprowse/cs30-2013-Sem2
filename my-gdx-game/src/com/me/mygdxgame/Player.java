@@ -28,10 +28,18 @@ public class Player {
 
     public void setScore(int score) {
     	//replace with formula for setting a score.
-    	/* IF (SCORE > 0) {
-    	 * IF(SCORE <= 100)
-    		THIS.SCORE += 5
-    	}
+    	//need counter for moving adds 1 everytime it moves
+    	// int score;
+    	/* if ( player == alive) {
+    	 * 		if(score <= 100) {
+    	 * 		This.score += 10
+    	 * 		}
+    	 * 		else if(score > 100 & score < 500) {
+    	 * 		this.score += 50
+    	 * 		} else if (score > 500) {
+    	 * 		this.score += 100
+    	 * 		}
+			}
 */    
         if(score > 0){
             this.score = score;
