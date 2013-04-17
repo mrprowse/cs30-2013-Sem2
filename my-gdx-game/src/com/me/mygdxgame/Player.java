@@ -40,7 +40,7 @@ public class Player {
     	 * 		this.score += 100
     	 * 		}
 			}
-*/    
+*/   
         if(score > 0){
             this.score = score;
         }
