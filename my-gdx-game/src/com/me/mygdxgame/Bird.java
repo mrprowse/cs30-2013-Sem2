@@ -1,8 +1,10 @@
 package com.me.mygdxgame;
 
-import com.sun.java_cup.internal.runtime.Scanner;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class Bird {
+public class Bird implements KeyListener{
 	
 boolean alive = true;
 // Create the bird size
@@ -10,13 +12,14 @@ private int xStart;
 private int xEnd;
 private int yStart;
 private int yEnd;
-//stub//
+//Stub
 
 public void fly( ){
-	if(collide = true){//Collide is from Sayuhya's collision class
+
+	if(collide = true){//Collide is from Sayujya's collision class
 		this.setAlive(false);//Base case 
-	}else{
-		//code to move the bird
+	}else{// trying to use listener
+
 	}
 }
 public Boolean getAlive() {
@@ -56,6 +59,21 @@ return yStart;
 
 public void setyStart(int yStart) {
 this.yStart = yStart;
+}
+@Override
+public void keyPressed(KeyEvent e) {
+	// TODO Auto-generated method stub
+	
+}
+@Override
+public void keyReleased(KeyEvent e) {
+	// TODO Auto-generated method stub
+	
+}
+@Override
+public void keyTyped(KeyEvent e) {
+	// TODO Auto-generated method stub
+	
 }
 
 
