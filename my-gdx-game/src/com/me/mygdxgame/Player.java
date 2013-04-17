@@ -2,10 +2,9 @@ package com.me.mygdxgame;
 
 
 public class Player {
-	// Hey Mr. Prowse, we're out of ideas on what to add to this class, any ideas?
 	
 	private int coins = 0;
-    //Bird Player = new Bird(); 
+    Bird Player = new Bird(); 
     private int score = 0;
     public static void main(String[] args) {
         
@@ -28,7 +27,12 @@ public class Player {
     }
 
     public void setScore(int score) {
-    	//replace with formula for setting a score, after randy has a timer.
+    	//replace with formula for setting a score.
+    	/* IF (SCORE > 0) {
+    	 * IF(SCORE <= 100)
+    		THIS.SCORE += 5
+    	}
+*/    
         if(score > 0){
             this.score = score;
         }
