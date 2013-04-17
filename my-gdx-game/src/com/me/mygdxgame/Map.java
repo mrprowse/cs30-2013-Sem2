@@ -14,52 +14,59 @@ public class Map {
 //position
     //stub
 
-    public static int spawnBird() {
-        return maxX / 2;
+    public static Bird spawnBird() {
+    	Bird bird = new Bird();
+    	return bird;
+    }
+    
+    public static Bird refreshBird(Bird bird){
+    	bird.fly();
+    	return bird;
+    	
     }
 
-    public static int spawnPyramids() {
+    public static Pyramid spawnPyramids(int birdxStart, int birdxEnd) {
         Random rand = new Random();
         Pyramid pyramid = new Pyramid();
         int x = 0, y = 0, z = 0;
         //Need to write base case
-        if (x == 0 || x <= Bird.getxEnd || x >= Bird.getxStart|| y == 0 || z == 0) {
+        if (x == 0 || x <= birdxEnd || x >= birdxStart|| y == 0 || z == 0) {
             x = rand.nextInt(maxX) + 1;
             y = maxY;
             z = rand.nextInt(maxZ) + 1;
         }
-        return 5;//Temporary, error bugs me
+        return pyramid;
     }
 
-    public static int spawnPowerups() {
+    public static Powerup spawnPowerups(int birdxStart, int birdxEnd) {
         Random rand = new Random();
         Powerup powerup = new Powerup();
         int x = 0, y = 0, z = 0;
         //Need to write base case
-        if (x == 0 || <= Bird.getxEnd || x >= Bird.getxStart || y == 0 || z == 0) {
+        if (x == 0 ||x <= birdxEnd || x >= birdxStart || y == 0 || z == 0) {
             x = rand.nextInt(maxX) + 1;
             y = maxY;
             z = rand.nextInt(maxZ) + 1;
         }
 
-        return 5;//Temporary, error bugs me
+        return powerup;
     }
 
-    public static int refreshPyramids(int y) {
+    public static Pyramid refreshPyramids(int pyramidy, Pyramid pyramid) {
         /*
          * Need the pyramids class
          */
-        y--; //Pyramids move closer, bird stays the same.
+        pyramidy--; //Pyramids move closer, bird stays the same.
 
-        return 5; //Temporary, errors bug me
+        return pyramid; 
     }
 
-    public static int refreshPowerups(int y) {
+    public static Powerup refreshPowerups(int powerupy, Powerup powerup) {
         /*
          * Need the power ups class
          */
-        y--; //Power ups move closer, bird stays the same.
-        return 5; //Temporary, error bugs me
+        powerupy--; //Power ups move closer, bird stays the same.
+        return powerup; 
     }
 }
 
