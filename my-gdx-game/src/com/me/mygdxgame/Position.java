@@ -7,6 +7,7 @@ public class Position {
 	 private int yEnd;
 	 private int heightStart;
 	 private int heightEnd;
+	 //stub
 	Position(){
 		this(0,0,0,0,0,0);
 	}
