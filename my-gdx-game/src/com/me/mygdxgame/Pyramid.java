@@ -8,5 +8,5 @@ public class Pyramid extends Collision {
 		else {
 			return false;
 		}
-	}
+	}//stub
 }
