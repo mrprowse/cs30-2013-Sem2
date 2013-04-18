@@ -34,5 +34,5 @@ public class Collision {
 	private void setPassable(boolean isPassable) {
 		this.isPassable = isPassable;
 	}
-	
+	//stub
 }
