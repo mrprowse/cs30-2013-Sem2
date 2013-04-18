@@ -9,15 +9,13 @@ public class Bird implements KeyListener{
 	
 boolean alive = true;
 // Create the bird size
-private int xStart;
-private int xEnd;
-private int yStart;
-private int yEnd;
+
+private Position position = new Position(45,45,50,50,10,20);
 //stub
 
 public void fly( ){
 
-	if(collide = true){//Collide is from Sayujya's collision class
+	if (Collide = true){//Collide is from Sayujya's collision class
 		this.setAlive(false);//Base case 
 	}else{
 		fly();// What? Recursion? Maybe?
@@ -32,46 +30,16 @@ return alive;
 public void setAlive(Boolean alive) {
 this.alive = alive;
 } 
-public int getxEnd() {
-return xEnd;
-}
 
-public void setxEnd(int xEnd) {
-this.xEnd = xEnd;
-}
-
-public int getxStart() {
-return xStart;
-}
-
-public void setxStart(int xStart) {
-this.xStart = xStart;
-}
-
-public int getyEnd() {
-return yEnd;
-}
-
-public void setyEnd(int yEnd) {
-this.yEnd = yEnd;
-}
-
-public int getyStart() {
-return yStart;
-}
-
-public void setyStart(int yStart) {
-this.yStart = yStart;
-}
 @Override
 public void keyPressed(KeyEvent e) {// TRYING TO LEARN TO USE KEY LISTENERS 
 	if(e.getKeyCode() == KeyEvent.VK_LEFT){
-		this.setxStart(this.getxStart()-1);
-		this.setxEnd(this.getxEnd()-1);
+		this.setPosition(this.position.updatePosition(this.getPosition().getxStart()-1, this.getPosition().getyStart()));
+		this.setPosition(this.position.updatePosition(this.getPosition().getxStart()-1, this.getPosition().getyStart()));
 	}
 	else if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-		this.setxStart(this.getxStart()+1);
-		this.setxEnd(this.getxEnd()+1);
+		this.setPosition(this.position.updatePosition(this.getPosition().getxStart()+1, this.getPosition().getyStart()));
+		this.setPosition(this.position.updatePosition(this.getPosition().getxStart()+1, this.getPosition().getyStart()));
 	}
        
 }
@@ -84,6 +52,14 @@ public void keyReleased(KeyEvent e) {
 public void keyTyped(KeyEvent e) {
 	// TODO Auto-generated method stub
 	
+}
+
+private Position getPosition() {
+	return position;
+}
+
+private void setPosition(Position position) {
+	this.position = position;
 }
 
 
