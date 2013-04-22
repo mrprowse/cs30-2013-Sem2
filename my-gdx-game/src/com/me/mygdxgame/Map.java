@@ -1,7 +1,7 @@
 package com.me.mygdxgame;
 
 import java.util.Random;
-
+//hiasd
 
 public class Map {
     /*
@@ -27,14 +27,16 @@ public class Map {
 
     public static Pyramid spawnPyramids(int birdxStart, int birdxEnd) {
         Random rand = new Random();
-        Pyramid pyramid = new Pyramid();
         int x = 0, y = 0, z = 0;
-        //Need to write base case
         if (x == 0 || x <= birdxEnd || x >= birdxStart|| y == 0 || z == 0) {
             x = rand.nextInt(maxX) + 1;
             y = maxY;
             z = rand.nextInt(maxZ) + 1;
         }
+        Pyramid pyramid = new Pyramid(0,0,5,5,0,5);
+        
+        //Need to write base case
+
         return pyramid;
     }
 
