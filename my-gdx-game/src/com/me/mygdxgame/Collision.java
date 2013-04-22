@@ -9,8 +9,9 @@ public class Collision {
 	 * @param positionBird
 	 * @return boolean value. If collided: true
 	 */
-	Collision (int xStart, int yStart, int xEnd, int yEnd, int heightStart, int heightEnd){
+	Collision (int xStart, int yStart, int xEnd, int yEnd, int heightStart, int heightEnd, boolean isPassable){
 		Position newPosition = new Position(xStart, yStart, xEnd, yEnd, heightStart, heightEnd);
+		this.setPassable(isPassable);
 		this.setPosition(newPosition);
 	}
 	public boolean collide (Position positionBird){
@@ -38,5 +39,4 @@ public class Collision {
 	private void setPassable(boolean isPassable) {
 		this.isPassable = isPassable;
 	}
-	//stub
 }
