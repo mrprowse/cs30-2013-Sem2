@@ -1,6 +1,6 @@
 package com.me.mygdxgame;
 
-
+//HEEEEELLLLOOOOO
 public class Player {
 	
 	private int coins = 0;
@@ -39,7 +39,6 @@ public class Player {
     	 * 		} else if (score > 500) {
     	 * 		this.score += 100
     	 * 		}
-			}
 */   
         if(score > 0){
             this.score = score;
