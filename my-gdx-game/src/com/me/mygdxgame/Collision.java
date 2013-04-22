@@ -9,6 +9,10 @@ public class Collision {
 	 * @param positionBird
 	 * @return boolean value. If collided: true
 	 */
+	Collision (int xStart, int yStart, int xEnd, int yEnd, int heightStart, int heightEnd){
+		Position newPosition = new Position(xStart, yStart, xEnd, yEnd, heightStart, heightEnd);
+		this.setPosition(newPosition);
+	}
 	public boolean collide (Position positionBird){
 		return this.position.Overlap(positionBird);
 	}
@@ -23,7 +27,7 @@ public class Collision {
 		return position;
 	}
 
-	private void setPosition(Position position) {
+	protected void setPosition(Position position) {
 		this.position = position;
 	}
 
