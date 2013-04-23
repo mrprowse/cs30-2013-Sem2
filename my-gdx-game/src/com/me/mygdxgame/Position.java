@@ -20,9 +20,12 @@ public class Position {
 		this.setHeightEnd(heightEnd);
 	}
 	public Position updatePosition(int xStart, int yStart){
+		this.setxEnd(xStart-this.getxStart()+this.getxEnd());
+		this.setyEnd(yStart-this.getyStart()+this.getyEnd());
 		this.setxStart(xStart);
 		this.setyStart(yStart);
 		return this;
+		
 	}
 	/**
 	 * Sees if the object passed is within the limits of the object calling.

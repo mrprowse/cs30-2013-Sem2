@@ -33,7 +33,7 @@ public class Map {
             y = maxY;
             z = rand.nextInt(maxZ) + 1;
         }
-        Pyramid pyramid = new Pyramid(0,0,5,5,0,5);
+        Pyramid pyramid = new Pyramid(0,0,5,5,5);
         
         //Need to write base case
 
@@ -42,7 +42,7 @@ public class Map {
 
     public static Powerup spawnPowerups(int birdxStart, int birdxEnd) {
         Random rand = new Random();
-        Powerup powerup = new Powerup();
+        Powerup powerup = new Powerup(0,0,5,5,0,5);
         int x = 0, y = 0, z = 0;
         //Need to write base case
         if (x == 0 ||x <= birdxEnd || x >= birdxStart || y == 0 || z == 0) {
@@ -54,11 +54,14 @@ public class Map {
         return powerup;
     }
 
-    public static Pyramid refreshPyramids(int pyramidy, Pyramid pyramid) {
+    public static Pyramid refreshPyramids(Pyramid pyramid) {
         /*
          * Need the pyramids class
          */
-        pyramidy--; //Pyramids move closer, bird stays the same.
+    	if(pyramid.getPosition().getyStart() == 0){
+    	}
+    	pyramid.updatePositon(pyramid.getPosition().getxStart(), pyramid.getPosition().getyEnd()-1);
+        pyramid.updatePositon(pyramid.getPosition().getxStart(), pyramid.getPosition().getyStart()-1); //Pyramids move closer, bird stays the same.
 
         return pyramid; 
     }
@@ -67,7 +70,11 @@ public class Map {
         /*
          * Need the power ups class
          */
-        powerupy--; //Power ups move closer, bird stays the same.
+    	if(powerup.getPosition().getyStart()==0){
+    		
+    	}
+    	powerup.updatePositon(powerup.getPosition().getxStart(), powerup.getPosition().getyStart()-1);
+    	powerup.updatePositon(powerup.getPosition().getxStart(), powerup.getPosition().getyEnd()-1); //Power ups move closer, bird stays the same.
         return powerup; 
     }
 }
