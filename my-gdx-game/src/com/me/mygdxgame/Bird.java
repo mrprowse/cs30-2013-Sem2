@@ -14,14 +14,16 @@ boolean alive = true;
 private Position position = new Position(45,45,50,50,10,20);
 //stub
 
-public void fly( ){
-
-	if (Collide = true){//Collide is from Sayujya's collision class
-		this.setAlive(false);//Base case 
-	}else{
-		fly();// What? Recursion? Maybe?
-
+public void fly(KeyEvent e){
+	if(e.getKeyCode() == KeyEvent.VK_LEFT){ //Move Left
+		this.setPosition(this.position.updatePosition(this.getPosition().getxStart()-1, this.getPosition().getyStart()));
+		this.setPosition(this.position.updatePosition(this.getPosition().getxStart()-1, this.getPosition().getyStart()));
 	}
+	else if(e.getKeyCode() == KeyEvent.VK_RIGHT){ //Move Right
+		this.setPosition(this.position.updatePosition(this.getPosition().getxStart()+1, this.getPosition().getyStart()));
+		this.setPosition(this.position.updatePosition(this.getPosition().getxStart()+1, this.getPosition().getyStart()));
+	}
+     
 }
 
 public Boolean getAlive() {
@@ -34,15 +36,7 @@ this.alive = alive;
 
 @Override
 public void keyPressed(KeyEvent e) {// TRYING TO LEARN TO USE KEY LISTENERS 
-	if(e.getKeyCode() == KeyEvent.VK_LEFT){
-		this.setPosition(this.position.updatePosition(this.getPosition().getxStart()-1, this.getPosition().getyStart()));
-		this.setPosition(this.position.updatePosition(this.getPosition().getxStart()-1, this.getPosition().getyStart()));
-	}
-	else if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-		this.setPosition(this.position.updatePosition(this.getPosition().getxStart()+1, this.getPosition().getyStart()));
-		this.setPosition(this.position.updatePosition(this.getPosition().getxStart()+1, this.getPosition().getyStart()));
-	}
-       
+this.fly(e);
 }
 @Override
 public void keyReleased(KeyEvent e) {
