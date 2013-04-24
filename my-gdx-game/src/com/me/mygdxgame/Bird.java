@@ -6,24 +6,30 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Bird implements KeyListener{
+import com.badlogic.gdx.scenes.scene2d.EventListener;
+
+public class Bird implements KeyListener,EventListener{
 	
 boolean alive = true;
 // Create the bird size
-
 private Position position = new Position(45,45,50,50,10,20);
-//stub
 
 public void fly(KeyEvent e){
 	if(e.getKeyCode() == KeyEvent.VK_LEFT){ //Move Left
-		this.setPosition(this.position.updatePosition(this.getPosition().getxStart()-1, this.getPosition().getyStart()));
-		this.setPosition(this.position.updatePosition(this.getPosition().getxStart()-1, this.getPosition().getyStart()));
+		this.moveLeft();
 	}
 	else if(e.getKeyCode() == KeyEvent.VK_RIGHT){ //Move Right
-		this.setPosition(this.position.updatePosition(this.getPosition().getxStart()+1, this.getPosition().getyStart()));
-		this.setPosition(this.position.updatePosition(this.getPosition().getxStart()+1, this.getPosition().getyStart()));
-	}
-     
+		this.moveRight();
+	}     
+}
+public void moveLeft(){
+	this.setPosition(this.position.updatePosition(this.getPosition().getxStart()-1, this.getPosition().getyStart()));
+	this.setPosition(this.position.updatePosition(this.getPosition().getxStart()-1, this.getPosition().getyStart()));
+}
+
+public void moveRight(){
+	this.setPosition(this.position.updatePosition(this.getPosition().getxStart()+1, this.getPosition().getyStart()));
+	this.setPosition(this.position.updatePosition(this.getPosition().getxStart()+1, this.getPosition().getyStart()));
 }
 
 public Boolean getAlive() {
